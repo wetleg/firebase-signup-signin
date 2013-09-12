@@ -1,20 +1,10 @@
 var SignUpViewModel = function() {
 	
 	var firebaseRoot = new Firebase("https://flat-tasks.firebaseio.com"); 
-
+	
+	
 	var authClient = new FirebaseSimpleLogin(firebaseRoot, function(error, user) {
-	 	if (error) {
-	    	// an error occurred while attempting login
-	    	console.log(error);
-			alert("User name or password is not correct. Please try again.");
-	  	} else if (user) {
-	    	// user authenticated with Firebase
-	    	console.log('Logging In User ID: ' + user.id + ', Provider: ' + user.provider);  
-	    	
-	  	} else {
-	    	// user is logged out
-	    	console.log('User is logged out');
-	  	}
+	 	// do login authentication checks
 	});
 	
 	
