@@ -1,6 +1,15 @@
-var NewUserModel = function (name, password) {
+var SignUpViewModel = function() {
 
-    this.userName = name;
-    this.userPassword = password;
+	var self = this;
 	
+	self.userName = ko.observable();
+	self.userPassword = ko.observable();
+	
+	self.signup = function() {
+		console.log( "signing up "+self.userName() );
+		
+	}
+
 }
+
+ko.applyBindings(new SignUpViewModel(), document.getElementById("welcome") );
