@@ -23,8 +23,29 @@
 
 <body>
 	
-	
-
+	<div class="well">
+		<div id="signup" class="span">
+		    <h1>Simple Signup and Login with Firebase</h1>
+		    <p>We will also be using knockout and bootstrap</p>
+		    <p>
+		    	<input type="text" class="input" placeholder="email" data-bind="value: userName">
+		  		<input type="password" class="input" placeholder="Password" data-bind="value: userPassword">
+		    </p>
+		    <p>	
+			    <a class="btn btn-primary btn-large" data-bind="click:signup">
+					Sign Up
+			    </a>
+			</p>
+			<p>
+			or if you've registered just ...
+			</p>
+			<p>
+			    <a class="btn btn-default btn-small" data-bind="click: $root.goToLogin">
+					Log In
+			    </a>
+		    </p>
+	    </div>
+	</div>
 
 </body>
 
