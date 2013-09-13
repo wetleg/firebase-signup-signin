@@ -13,7 +13,17 @@
 	</script>
 	
 	<script type='text/javascript' 
+			src="js/LoginViewModel.js" 
+			defer="defer">
+	</script>
+	
+	<script type='text/javascript' 
 			src="js/SignUpViewModel.js" 
+			defer="defer">
+	</script>
+	
+	<script type='text/javascript' 
+			src="js/ViewModels.js" 
 			defer="defer">
 	</script>
 	
@@ -23,16 +33,16 @@
 
 <body>
 	
-	<div class="well">
-		<div id="signup" class="span">
+	<div id="signup" class="well" data-bind="visible: signupVM.isVisible">
+		<div  class="span">
 		    <h1>Simple Signup and Login with Firebase</h1>
 		    <p>We will also be using knockout and bootstrap</p>
 		    <p>
-		    	<input type="text" class="input" placeholder="email" data-bind="value: userName">
-		  		<input type="password" class="input" placeholder="Password" data-bind="value: userPassword">
+		    	<input type="text" class="input" placeholder="email" data-bind="value: signupVM.userName">
+		  		<input type="password" class="input" placeholder="Password" data-bind="value: signupVM.userPassword">
 		    </p>
 		    <p>	
-			    <a class="btn btn-primary btn-large" data-bind="click:signup">
+			    <a class="btn btn-primary btn-large" data-bind="click:signupVM.signup">
 					Sign Up
 			    </a>
 			</p>
@@ -40,12 +50,29 @@
 			or if you've registered just ...
 			</p>
 			<p>
-			    <a class="btn btn-default btn-small" data-bind="click: $root.goToLogin">
+			    <a class="btn btn-default btn-small" data-bind="click: loginVM.makeVisible">
 					Log In
 			    </a>
 		    </p>
 	    </div>
 	</div>
+	
+	<div id="login" class="well" data-bind="visible: loginVM.isVisible">
+		<div class="span">
+		  	<h1>Simple Signup and Login with Firebase<</h1>
+		    <p>We will also be using knockout and bootstrap</p>
+		    <p>
+		    	<input type="text" class="input" placeholder="Email" data-bind="value: loginVM.userName">
+		  			<input type="password" class="input" placeholder="Password" data-bind="value: loginVM.userPassword">
+		    </p>
+		    <p>	
+			    <a class="btn btn-primary btn-large" data-bind="click:loginVM.login">
+					Log In
+			    </a>
+			</p>
+		</div>
+	</div>
+	
 
 </body>
 

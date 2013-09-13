@@ -1,4 +1,4 @@
-var SignUpViewModel = function() {
+var SignUpViewModel = function(makeLoginViewVisible) {
 	
 	var firebaseRoot = new Firebase("https://flat-tasks.firebaseio.com"); 
 	
@@ -12,6 +12,7 @@ var SignUpViewModel = function() {
 	
 	self.userName = ko.observable();
 	self.userPassword = ko.observable();
+	self.isVisible = ko.observable(makeLoginViewVisible);
 	
 	self.signup = function() {
 		
@@ -31,7 +32,13 @@ var SignUpViewModel = function() {
 		});
 		
 	}
+	
+	self.goToLogin = function() {
+		
+		self.isVisible(false);
+		
+		
+	}
 
 }
 
-ko.applyBindings(new SignUpViewModel(), document.getElementById("welcome") );
