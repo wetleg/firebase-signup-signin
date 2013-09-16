@@ -51,3 +51,7 @@ var SignUpViewModel = function(makeLoginViewVisible) {
 
 }
 
+<<<<<<< HEAD
+=======
+ko.applyBindings(new SignUpViewModel() );
+>>>>>>> 88eb9baec9051f45d24f480f5a51f7322a93a821
