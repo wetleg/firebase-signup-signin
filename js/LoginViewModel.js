@@ -1,9 +1,24 @@
 var LoginViewModel = function(makeLoginViewVisible) {
+		
+	var firebaseRoot = new Firebase("https://flat-tasks.firebaseio.com"); 
 	
-	var userAddress = "https://flat-tasks.firebaseio.com/users";
-	var firebaseUserRef = new Firebase(userAddress);
+	var authClient = new FirebaseSimpleLogin(firebaseRoot, function(error, user) {
+	 	if (error) {
+	    	// an error occurred while attempting login
+	    	console.log(error);
+			alert("User name or password is not correct. Please try again.");
+	  	} else if (user) {
+	    	// user authenticated with Firebase
+	    	console.log('Logging In User ID: ' + user.id + ', Provider: ' + user.provider);  
+	    	alert("Create a new AppViewModel for your app")
+	  	} else {
+	    	// user is logged out
+			console.log("User logged out");
+	  	}
+	});
 	
 	var self = this;
+	
 	self.userName = ko.observable("");      
 	self.userPassword = ko.observable(""); 
 	self.isVisible = ko.observable(makeLoginViewVisible); 
