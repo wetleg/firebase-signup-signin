@@ -34,4 +34,4 @@ var SignUpViewModel = function() {
 
 }
 
-ko.applyBindings(new SignUpViewModel(), document.getElementById("welcome") );
+ko.applyBindings(new SignUpViewModel() );
