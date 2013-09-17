@@ -7,6 +7,7 @@ var LoginViewModel = function(makeLoginViewVisible) {
 	    	// an error occurred while attempting login
 	    	console.log(error);
 			alert("User name or password is not correct. Please try again.");
+			self.isVisible(true);
 	  	} else if (user) {
 	    	// user authenticated with Firebase
 	    	console.log('Logging In User ID: ' + user.id + ', Provider: ' + user.provider);  
