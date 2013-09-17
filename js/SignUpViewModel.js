@@ -33,6 +33,7 @@ var SignUpViewModel = function(makeLoginViewVisible) {
 				// User not signed up so .... sign her up
 				console.log( "Signed up "+self.userName() );
 		    	console.log('Firebase User Id: ' + user.id + ', and Email: ' + user.email);
+				alert(user.email + " has successfully signed up. Please login.");
 			
 		  	} else {
 				// User already signed up
